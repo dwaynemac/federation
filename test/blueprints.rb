@@ -6,6 +6,11 @@ Uname.blueprint do
 end
 
 Federation.blueprint do
-  name { Fake::Name.first_name }
+  name { Faker::Name.first_name }
+end
 
+Person.blueprint do
+  first_name { Faker::Name.first_name }
+  last_name { Faker::Name.last_name }
+  level { "asistente" }
 end

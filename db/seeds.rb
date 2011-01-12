@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+FiliationCategory.create([{:name => 'agregada'},{:name => 'acreditada'}, {:name => 'certificada'}])

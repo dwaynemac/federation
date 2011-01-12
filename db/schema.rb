@@ -27,10 +27,14 @@ ActiveRecord::Schema.define(:version => 20110112143024) do
   end
 
   create_table "people", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "level"
+    t.string   "phone"
+    t.string   "email"
     t.integer  "monitor_id"
     t.integer  "supervisor_id"
     t.integer  "school_id"
-    t.string   "level"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,8 +50,8 @@ ActiveRecord::Schema.define(:version => 20110112143024) do
 
   create_table "unames", :force => true do |t|
     t.string   "name"
-    t.string   "named_class"
     t.integer  "named_id"
+    t.string   "named_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

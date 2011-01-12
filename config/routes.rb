@@ -1,12 +1,12 @@
 Fed::Application.routes.draw do
 
-  resources :personas
-
   resources :federations do
     resources :schools do
       resources :people
     end
+    resources :people
   end
+  resources :people
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
