@@ -6,6 +6,7 @@ class Federation < ActiveRecord::Base
   belongs_to :vice_president, :class_name => "Person"
 
   has_many :schools
+  has_many :people
 
   validates_presence_of :name
 end

@@ -1,0 +1,13 @@
+<h1><%= @person.full_name %></h1>
+
+<div id="observations">
+  <h2><%= t('people.show.observations') %></h2>
+  <ul>
+    <%- @person.observations.each do |o| -%>
+      <li>
+        <h3><%= l o.observed_on %> - <%= o.observer.full_name %></h3>
+        <%= o.observation %>
+      </li>
+    <%- end -%>
+  </ul>
+</div>

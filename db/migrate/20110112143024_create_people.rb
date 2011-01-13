@@ -12,6 +12,7 @@ class CreatePeople < ActiveRecord::Migration
       t.references :monitor
       t.references :supervisor
       t.references :school
+      t.references :federation
 
 
       t.timestamps

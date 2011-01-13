@@ -4,11 +4,13 @@ source "http://gems.github.com"
 gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
+gem 'formtastic', '1.2.3'
+
 group :test, :development do
-  gem "faker"
-  gem "machinist"
-  gem "thoughtbot-shoulda", ">= 2.0.6", :require => "shoulda"
-  gem "mocha"
+  gem "faker", '0.9.4'
+  gem "machinist", '1.0.6'
+  gem "thoughtbot-shoulda", "2.11.1", :require => "shoulda"
+  gem "mocha", '0.9.10'
 end
 
 # Deploy with Capistrano

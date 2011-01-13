@@ -35,6 +35,10 @@ GEM
       abstract (>= 1.0.0)
     faker (0.9.4)
       i18n (~> 0.4)
+    formtastic (1.2.3)
+      actionpack (>= 2.3.7)
+      activesupport (>= 2.3.7)
+      i18n (~> 0.4)
     i18n (0.5.0)
     machinist (1.0.6)
     mail (2.2.12)
@@ -76,9 +80,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  faker
-  machinist
-  mocha
+  faker (= 0.9.4)
+  formtastic (= 1.2.3)
+  machinist (= 1.0.6)
+  mocha (= 0.9.10)
   rails (= 3.0.3)
   sqlite3-ruby
-  thoughtbot-shoulda (>= 2.0.6)
+  thoughtbot-shoulda (= 2.11.1)

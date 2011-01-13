@@ -8,6 +8,10 @@ Fed::Application.routes.draw do
   end
   resources :people
 
+  match "/:name", :controller => 'unames', :action => 'show'
+
+  root :to => "people#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
