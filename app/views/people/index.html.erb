@@ -1,0 +1,21 @@
+<h1><%= t('people.index.title') %></h1>
+
+<table>
+  <tr>
+    <th><%= t('person.labels.full_name') %></th>
+    <th><%= t('person.labels.phone') %></th>
+    <th><%= t('person.labels.email') %></th>
+    <th><%= t('person.labels.level') %></th>
+    <th><%= t('person.labels.school') %></th>
+    <th><%= t('person.labels.monitor') %></th>
+    <th><%= t('person.labels.supervisor') %></th>
+  </tr>
+  <%- @people.each do |person| -%>
+    <tr>
+      <td><%= h person.full_name %></td>
+      <td><%= link_to t('edit'), edit_person_path(person) %></td>
+    </tr>
+  <%- end -%>
+</table>
+
+<%= link_to t('new_person'), new_person_path %>

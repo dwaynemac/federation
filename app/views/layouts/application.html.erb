@@ -8,6 +8,27 @@
 </head>
 <body>
 
+<div id="flash_messages">
+  <p class="success">
+    <%= flash[:success] %>
+  </p>
+  <p class="notice">
+    <%= notice %>
+  </p>
+  <p class="alert">
+    <%= alert %>
+  </p>
+</div>
+
+<div id="session">
+  <%- if user_signed_in? -%>
+    <%= current_user.email %> | <%= link_to t('sign_out'), destroy_user_session_path %>
+  <%- else -%>
+    <%= link_to t('sign_up'), new_user_registration_path %> |
+    <%= link_to t('sign_in'), new_user_session_path %>
+  <%- end -%>
+</div>
+
 <%= yield %>
 
 </body>

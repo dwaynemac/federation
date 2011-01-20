@@ -5,7 +5,7 @@ class Person < ActiveRecord::Base
   belongs_to :school
 
   belongs_to :monitor, :class_name => "Person"      #current monitor
-  belongs_to :supervisor, :class_name => "Person"   #current supervisor
+  belongs_to :supervisor, :class_name => "Person", :conditions => { :level => 'maestro' }   #current supervisor
   belongs_to :federation                            #current federation
 
   has_many :monitored, :class_name => "Person", :foreign_key => 'monitor_id'

@@ -7,11 +7,11 @@ module ApplicationHelper
     html = ""
     content_tag :script do
       if data_array
-        html << "var data = '#{data_array.join(', ')}';"
+        html << "var data = '#{data_array.join(', ')}'; "
       else
-        html << "use data_url to get json;"
+        html << "use data_url to get json; "
       end
-      html << "$('#{css_selector}').autocomplete(data, {matchContains: 'word'});"
+      html << "$('#{css_selector}').autocomplete(data, {matchContains: 'word'}); "
     end
   end
 

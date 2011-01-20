@@ -1,0 +1,10 @@
+<%- f.inputs do -%>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :level, :as => :select, :collection => ['asistente', 'docente', 'maestro'] %>
+  <%= f.input :monitor, :as => :string, :input_html => { :class => 'autocomplete'} %>
+  <%= f.input :supervisor %>
+  <%= f.input :federation %>
+  <%= f.input :school %>
+<%- end -%>
+<%= autocomplete_script(:css_selector => '.autocomplete', :array => %w(as asd fad )) %>

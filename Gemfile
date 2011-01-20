@@ -6,6 +6,13 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'formtastic', '1.2.3'
 
+gem 'will_paginate'
+gem 'paperclip'
+gem 'devise', '1.1.5'
+gem 'rubycas-client'
+gem 'drc_client'
+
+
 group :test, :development do
   gem "faker", '0.9.4'
   gem "machinist", '1.0.6'

@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
 
+  before_filter :login_required
   before_filter :set_scope
 
   def index
@@ -30,7 +31,7 @@ class PeopleController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { render :actions => :new }
+        format.html { render :action => :new }
       end
     end
   end
