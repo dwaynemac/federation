@@ -69,15 +69,15 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length
-  # config.password_length = 6..20
+  config.password_length = 6..20
 
   # Regex to use to validate the email address
-  # config.email_regexp = /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i
+  config.email_regexp = /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again.
-  # config.timeout_in = 10.minutes
+  config.timeout_in = 10.minutes
 
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.
@@ -139,4 +139,18 @@ Devise.setup do |config|
   #   end
   #   manager.default_strategies(:scope => :user).unshift :twitter_oauth
   # end
+
+  # ==> CAS Configuration
+   config.cas_base_url = "https://www.metododerose.org:8443"
+
+  # you can override these if you need to, but cas_base_url is usually enough
+  # config.cas_login_url = "https://cas.myorganization.com/login"
+  # config.cas_logout_url = "https://cas.myorganization.com/logout"
+  # config.cas_validate_url = "https://cas.myorganization.com/serviceValidate"
+
+  # By default, devise_cas_authenticatable will create users.  If you would rather
+  # require user records to already exist locally before they can authenticate via
+  # CAS, uncomment the following line.
+  config.cas_create_user = false
+
 end

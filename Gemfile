@@ -9,9 +9,7 @@ gem 'formtastic', '1.2.3'
 gem 'will_paginate'
 gem 'paperclip'
 gem 'devise', '1.1.5'
-gem 'rubycas-client'
-gem 'drc_client'
-
+gem 'devise_cas_authenticatable'
 
 group :test, :development do
   gem "faker", '0.9.4'

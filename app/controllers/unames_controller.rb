@@ -1,7 +1,5 @@
 class UnamesController < ApplicationController
 
-  before_filter :login_required
-
   def show
     object = Uname.get(params[:name])
     if object
