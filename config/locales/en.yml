@@ -32,3 +32,7 @@ en:
       title: "People"
   destroy: "remove"
   confirm: "Sure?"
+  main:
+    public:
+      login_cas: "sign in on DeRose Connect"
+      public_message: "this is public. <br>   ¿need access? contact the administrator."

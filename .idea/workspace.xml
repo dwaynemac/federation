@@ -17,6 +17,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/person.rb" afterPath="$PROJECT_DIR$/app/models/person.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main/public.html.erb" afterPath="$PROJECT_DIR$/app/views/main/public.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/people/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/people/_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/people/index.html.erb" afterPath="$PROJECT_DIR$/app/views/people/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/people/show.html.erb" afterPath="$PROJECT_DIR$/app/views/people/show.html.erb" />
@@ -78,10 +79,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20110119215807_devise_create_users.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="20110119215807_devise_create_users.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20110119215807_devise_create_users.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="306" selection-end="306" vertical-scroll-proportion="0.32200357">
+            <state line="12" column="0" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="public.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/main/public.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="22" selection-start="26" selection-end="26" vertical-scroll-proportion="0.02918288">
               <folding />
             </state>
           </provider>
@@ -138,6 +148,7 @@
         <option value="$PROJECT_DIR$/app/controllers/observations_controller.rb" />
         <option value="$PROJECT_DIR$/test/functional/observations_controller_test.rb" />
         <option value="$PROJECT_DIR$/app/views/people/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/main/public.html.erb" />
       </list>
     </option>
   </component>
@@ -521,13 +532,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/blueprints.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="10" selection-start="600" selection-end="600" vertical-scroll-proportion="0.6749226">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/observation.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="6" selection-start="73" selection-end="73" vertical-scroll-proportion="0.055762082">
@@ -628,7 +632,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20110119215807_devise_create_users.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="306" selection-end="306" vertical-scroll-proportion="0.32200357">
+        <state line="12" column="0" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main/public.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="22" selection-start="26" selection-end="26" vertical-scroll-proportion="0.02918288">
           <folding />
         </state>
       </provider>
