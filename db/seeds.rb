@@ -7,3 +7,5 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 FiliationCategory.create([{:name => 'agregada'},{:name => 'acreditada'}, {:name => 'certificada'}])
+id = Federation.create(:name => "ARgentina")
+User.create(:username => "dwayne.macgowan", :federation_id => id)
