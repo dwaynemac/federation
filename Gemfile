@@ -1,17 +1,23 @@
 source 'http://rubygems.org'
 source "http://gems.github.com"
 
-gem 'rails', '3.0.3'
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'rails', '3.0.4'
+gem 'sqlite3'
 
 gem 'formtastic', '1.2.3'
 
 gem 'will_paginate'
 gem 'paperclip'
+
 gem 'devise', '1.1.5'
 gem 'devise_cas_authenticatable'
 
+gem 'cancan'
+
+gem "mail", "~> 2.2.15"
+
 group :test, :development do
+  gem 'yard'
   gem "faker", '0.9.4'
   gem "machinist", '1.0.6'
   gem "thoughtbot-shoulda", "2.11.1", :require => "shoulda"

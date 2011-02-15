@@ -1,0 +1,10 @@
+<table>
+  <%- @schools.each do |s| -%>
+    <tr>
+      <td><%= s.name %></td>
+      <td><%= s.director.try(:name) %></td>
+      <td><%= s.filiation_category.try(:name) %></td>
+      <td><%= s.team_members.count %></td>
+    </tr>
+  <%- end -%>
+</table>

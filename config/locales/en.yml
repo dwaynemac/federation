@@ -4,3 +4,31 @@
 en:
   hello: "Hello world"
   page_title: "Federations"
+  layouts:
+    application:
+      people: "People"
+      schools: "Schools"
+  activerecord:
+    attributes:
+      person:
+        full_name: "Full name"
+        phone: "phone"
+        email: "email"
+        level: "level"
+        school: "current school"
+        monitor: "current monitor"
+        supervisor: "current supervisor"
+        federation: "current federation"
+        active: "Actively teaching"
+        uniyoga: "Filiated to Uni-Yôga"
+  people:
+    form:
+      active_hint: "¿Is this teacher actively teaching?"
+      uniyoga_hint: "¿Is he filiated to Uni-Yôga?"
+    show:
+      observations: "Observations"
+      new_observation: "add observation"
+    index:
+      title: "People"
+  destroy: "remove"
+  confirm: "Sure?"

@@ -6,5 +6,7 @@
   <%= f.input :supervisor %>
   <%= f.input :federation %>
   <%= f.input :school %>
+  <%= f.input :active, :hint => t('.active_hint') %>
+  <%= f.input :uniyoga, :hint => t('.uniyoga_hint') %>
 <%- end -%>
-<%= autocomplete_script(:css_selector => '.autocomplete', :array => %w(as asd fad )) %>
+<%= f.inputs :email, :phone %>

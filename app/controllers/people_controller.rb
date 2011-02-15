@@ -4,7 +4,7 @@ class PeopleController < ApplicationController
 
   def index
     respond_to do |format|
-      format.html { @people = @scope.all }
+      format.html { @people = @scope.paginate :page => params[:page] }
     end
   end
 
@@ -26,7 +26,7 @@ class PeopleController < ApplicationController
     @person = @scope.new(params[:person])
     if @person.save
       respond_to do |format|
-        format.html { redirect_to @person, :flash => { :success => t('people.create.success')} }
+        format.html { redirect_to people_url, :flash => { :success => t('people.create.success')} }
       end
     else
       respond_to do |format|
@@ -46,7 +46,7 @@ class PeopleController < ApplicationController
     @person = @scope.find(params[:id])
     if @person.update_attributes(params[:person])
       respond_to do |format|
-        format.html { redirect_to @person, :flash => {:success => t('people.update.success')} }
+        format.html { redirect_to people_url, :flash => {:success => t('people.update.success')} }
       end
     else
       respond_to do |format|
@@ -68,10 +68,8 @@ class PeopleController < ApplicationController
   def set_scope
     if params[:school_id]
       @scope = School.find(params[:school_id]).team_members
-    elsif params[:federation_id]
-      @scope = Federation.find(params[:federation_id]).people
     else
-      @scope = Person
+      @scope = current_user.federation.people
     end
   end
 

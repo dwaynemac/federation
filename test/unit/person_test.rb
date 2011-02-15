@@ -14,7 +14,6 @@ class PersonTest < ActiveSupport::TestCase
     should have_many(:supervised)
 
     should have_many(:observations)
-    should have_many(:observations_it_made)
 
     should allow_value('asistente').for(:level)
     should allow_value('docente').for(:level)

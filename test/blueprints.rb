@@ -22,3 +22,15 @@ Person.blueprint do
   last_name { Faker::Name.last_name }
   level { "asistente" }
 end
+
+User.blueprint do
+  username { Faker::Internet.user_name }
+  federation { Federation.make }
+end
+
+Observation.blueprint do
+  observer { User.make }
+  observed { Person.make(:federation => self.oberver.federation) }
+  observation { Faker::Lorem.paragraph }
+  observed_on { Time.zone.now }
+end

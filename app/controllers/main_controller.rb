@@ -11,7 +11,7 @@ class MainController < ApplicationController
 
   def public
     respond_to do |format|
-      format.html
+      format.html { render :layout => 'public' }
     end
   end
 

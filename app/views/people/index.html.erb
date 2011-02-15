@@ -1,21 +1,34 @@
-<h1><%= t('people.index.title') %></h1>
+<h1><%= t('.title') %></h1>
 
-<table>
+<%= will_paginate @people %>
+<table border="1">
   <tr>
-    <th><%= t('person.labels.full_name') %></th>
-    <th><%= t('person.labels.phone') %></th>
-    <th><%= t('person.labels.email') %></th>
-    <th><%= t('person.labels.level') %></th>
-    <th><%= t('person.labels.school') %></th>
-    <th><%= t('person.labels.monitor') %></th>
-    <th><%= t('person.labels.supervisor') %></th>
+    <th><%= t('activerecord.attributes.person.full_name') %></th>
+    <th><%= t('activerecord.attributes.person.phone') %></th>
+    <th><%= t('activerecord.attributes.person.email') %></th>
+    <th><%= t('activerecord.attributes.person.level') %></th>
+    <th><%= t('activerecord.attributes.person.active') %></th>
+    <th><%= t('activerecord.attributes.person.uniyoga') %></th>
+    <th><%= t('activerecord.attributes.person.school') %></th>
+    <th><%= t('activerecord.attributes.person.monitor') %></th>
+    <th><%= t('activerecord.attributes.person.supervisor') %></th>
   </tr>
   <%- @people.each do |person| -%>
     <tr>
-      <td><%= h person.full_name %></td>
-      <td><%= link_to t('edit'), edit_person_path(person) %></td>
+      <td><%= link_to person.full_name, person %></td>
+      <td><%= person.phone %></td>
+      <td><%= person.email %></td>
+      <td><%= person.level %></td>
+      <td><%= person.active? %></td>
+      <td><%= person.uniyoga? %></td>
+      <td><%= person.school.try :name %></td>
+      <td><%= person.monitor.try :full_name %></td>
+      <td><%= person.supervisor.try :full_name %></td>
+      <td><%= link_to_if can?(:update,person), t('edit'), edit_person_path(person) %></td>
+      <td> -- NOT WORKING --<%= link_to t('destroy'), person_path(person), :confirm => t('confirm'), :method => :delete, :title => t('destroy') %></td>
     </tr>
   <%- end -%>
 </table>
+<%= will_paginate @people %>
 
-<%= link_to t('new_person'), new_person_path %>
+<%= link_to_if can?(:create,Person), t('new_person'), new_person_path %>
