@@ -1,0 +1,8 @@
+<li>
+  <h3><%= l observation.observed_on %> - <%= observation.observer.username %></h3>
+  <%= observation.observation %>
+  <p>
+    <%= link_to_if can?(:update, observation), t('edit'), edit_person_observation_path(:person_id =>@person.id, :id => observation.id) %>
+    <%= link_to_if can?(:destroy,observation), t('destroy'), [@person, observation], :method => :delete, :confirm => t('confirm') %>
+  </p>
+</li>

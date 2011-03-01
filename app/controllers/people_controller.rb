@@ -3,8 +3,17 @@ class PeopleController < ApplicationController
   before_filter :set_scope
 
   def index
+
+    @schools = current_user.federation.schools.all
+
+    if params[:search].nil?
+      # default filter
+      params[:search] = {:active_is_true => true, :uniyoga_is_true => true}
+    end
+    @search = @scope.search(params[:search])
+
     respond_to do |format|
-      format.html { @people = @scope.paginate :page => params[:page] }
+      format.html { @people = @search.paginate :page => params[:page] }
     end
   end
 
@@ -67,9 +76,9 @@ class PeopleController < ApplicationController
 
   def set_scope
     if params[:school_id]
-      @scope = School.find(params[:school_id]).team_members
+      @scope = School.find(params[:school_id]).team_members.accessible_by(current_ability)
     else
-      @scope = current_user.federation.people
+      @scope = current_user.federation.people.accessible_by(current_ability)
     end
   end
 

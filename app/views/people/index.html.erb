@@ -1,5 +1,7 @@
 <h1><%= t('.title') %></h1>
 
+<%= render :partial => 'filter' %>
+
 <%= will_paginate @people %>
 <table border="1">
   <tr>
@@ -25,7 +27,7 @@
       <td><%= person.monitor.try :full_name %></td>
       <td><%= person.supervisor.try :full_name %></td>
       <td><%= link_to_if can?(:update,person), t('edit'), edit_person_path(person) %></td>
-      <td> -- NOT WORKING --<%= link_to t('destroy'), person_path(person), :confirm => t('confirm'), :method => :delete, :title => t('destroy') %></td>
+      <td><%= link_to_if can?(:destroy,person), t('destroy'), person_path(person), :confirm => t('confirm'), :method => :delete, :title => t('destroy') %></td>
     </tr>
   <%- end -%>
 </table>

@@ -6,6 +6,7 @@ class PeopleControllerTest < ActionController::TestCase
     setup { get :index }
     should respond_with(:success)
     should assign_to(:people)
+    should assign_to(:search)
   end
 
   context "show" do

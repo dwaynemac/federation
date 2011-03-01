@@ -3,12 +3,8 @@
 <head>
   <title><%= t('page_title') %></title>
   <%= csrf_meta_tag %>
-  <%= javascript_include_tag 'rails' %>
+  <%= javascript_include_tag :defaults %>
   <%= stylesheet_link_tag 'scaffold' %>
-  <%= stylesheet_link_tag 'jquery.autocomplete' %>
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag 'jquery-1.4.4.min' %>
-  <%= javascript_include_tag 'jquery.autocomplete.min' %>
 </head>
 <body>
 
@@ -27,6 +23,7 @@
 
 <%= yield %>
 
+<%= yield :pre_end_body %>
 </body>
 </html>
 

@@ -1,10 +1,23 @@
-<table>
+<h1><%= t('.title') %></h1>
+<%= render :partial => 'filter' %>
+<table border="1">
+  <tr>
+    <% [:name, :director, :filiation_category, :team_members].each do |k| %>
+      <th><%= School.human_attribute_name(k) %></th>
+    <%- end -%>
+  </tr>
   <%- @schools.each do |s| -%>
     <tr>
       <td><%= s.name %></td>
-      <td><%= s.director.try(:name) %></td>
+      <td><%= s.director.try(:full_name) %></td>
       <td><%= s.filiation_category.try(:name) %></td>
       <td><%= s.team_members.count %></td>
+      <td><%= link_to_if can?(:update,s), t('edit'), edit_school_path(s) %></td>
+      <td><%= link_to_if can?(:destroy,s), t('destroy'), school_path(s), :method => :delete, :confirm => t('confirm')%></td>
     </tr>
   <%- end -%>
 </table>
+
+<p>
+  <%= link_to t('.new_school'), new_school_path if can? :create, School %>
+</p>

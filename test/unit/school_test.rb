@@ -7,7 +7,7 @@ class SchoolTest < ActiveSupport::TestCase
     should have_one(:uname)
     should validate_presence_of(:name)
 
-    should have_one(:director)
+    should belong_to(:director)
     should have_many(:team_members)
 
     should belong_to(:filiation_category)

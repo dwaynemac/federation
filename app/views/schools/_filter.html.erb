@@ -1,0 +1,21 @@
+<a id="show_filter"><%= t('toggle_filter') %></a>
+<div id="filter">
+<%= semantic_form_for @search do |f| %>
+    <%= f.inputs do %>
+        <%= f.input :name_like %>
+        <%= f.input :filiation_category_id_in, :as => :select, :collection => @filiation_categories, :multiple => true %>
+    <%- end -%>
+    <%= f.buttons do %>
+        <%= f.commit_button t('filter') %>
+    <%- end -%>
+<%- end -%>
+</div>
+
+<%- content_for :pre_end_body do -%>
+    <%= javascript_tag do %>
+        $('#filter').hide();
+        $('#show_filter').click(function(){
+            $('#filter').slideToggle("slow")
+        });
+    <%- end -%>
+<%- end -%>

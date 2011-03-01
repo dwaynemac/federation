@@ -1,0 +1,24 @@
+<a id="show_filter"><%= t('toggle_filter') %></a>
+<div id="filter">
+  <%= semantic_form_for @search do |f| -%>
+      <%= f.inputs :first_name_like, :last_name_like, :email_like, :phone_like %>
+      <%= f.inputs do %>
+          <%= f.input :school_id_in, :as => :select, :multiple => true, :collection => @schools.map { |s| [s.name, s.id] } %>
+          <%= f.input :level_in, :as => :select, :collection => Person::LEVELS %>
+          <%= f.input :active_is_true, :as => :boolean %>
+          <%= f.input :uniyoga_is_true, :as => :boolean %>
+      <%- end -%>
+      <%= f.buttons do %>
+          <%- f.commit_button t('filter').capitalize -%>
+      <%- end -%>
+  <%- end -%>
+</div>
+
+<%- content_for :pre_end_body do -%>
+    <%= javascript_tag do %>
+        $('#filter').hide();
+        $('#show_filter').click(function(){
+            $('#filter').slideToggle("slow")
+        });
+    <%- end -%>
+<%- end -%>

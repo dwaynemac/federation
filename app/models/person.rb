@@ -14,13 +14,14 @@ class Person < ActiveRecord::Base
   # current federation
   belongs_to :federation
 
-  has_many :monitored, :class_name => "Person", :foreign_key => 'monitor_id'
-  has_many :supervised, :class_name => "Person", :foreign_key => 'supervisor_id'
+  has_many :monitored, :class_name => "Person", :foreign_key => 'monitor_id', :dependent => :nullify
+  has_many :supervised, :class_name => "Person", :foreign_key => 'supervisor_id', :dependent => :nullify
 
   # observations made to this person
-  has_many :observations, :foreign_key => "observed_id"
+  has_many :observations, :foreign_key => "observed_id", :dependent => :destroy
 
-  validates_inclusion_of :level, :in => %w(asistente docente maestro)
+  LEVELS = %w(asistente docente maestro)
+  validates_inclusion_of :level, :in => LEVELS
   validates_presence_of :level
 
   scope :full_name_like, lambda{ |string| {:conditions => {:first_name => string}} }

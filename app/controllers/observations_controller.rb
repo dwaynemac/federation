@@ -24,6 +24,24 @@ class ObservationsController < ApplicationController
     end
   end
 
+  def edit
+    @observation = @scope.find(params[:id])
+  end
+  
+  def update
+    @observation = @scope.find(params[:id])
+    if @observation.update_attributes(params[:observation])
+      respond_to do |format|
+        format.html { redirect_to @person, :flash => {:success => t('observation.update.success')} }
+      end
+    else
+      respond_to do |format|
+        format.html { render :action => 'edit'}
+      end
+
+    end
+  end
+  
   def destroy
     @observation = @scope.find(params[:id])
     @observation.destroy
@@ -34,8 +52,8 @@ class ObservationsController < ApplicationController
   private
 
   def set_scope
-    @person = current_user.federation.people.find(params[:person_id])
-    @scope = @person.observations
+    @person = current_user.federation.people.accessible_by(current_ability).find(params[:person_id])
+    @scope = @person.observations.accessible_by(current_ability)
   end
 
 end

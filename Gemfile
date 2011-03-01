@@ -5,16 +5,18 @@ gem 'rails', '3.0.4'
 gem 'sqlite3'
 
 gem 'formtastic', '1.2.3'
-
+gem 'meta_search'
 gem 'will_paginate'
-gem 'paperclip'
 
-gem 'devise', '1.1.5'
+gem 'devise', '1.1.6'
 gem 'devise_cas_authenticatable'
 
 gem 'cancan'
 
 gem "mail", "~> 2.2.15"
+
+gem 'jquery-rails', '>= 0.2.6'
+
 
 group :test, :development do
   gem 'yard'

@@ -7,6 +7,7 @@ class School < ActiveRecord::Base
 
   validates_presence_of :name
 
-  has_one  :director, :class_name => "Person"
+
+  belongs_to :director, :class_name => "Person"
   has_many :team_members, :class_name => "Person"
 end
