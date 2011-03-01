@@ -1,0 +1,7 @@
+<div id="general_evaluations">
+  <h2><%= t('.general_evaluations') %></h2>
+  <ul>
+    <%= render :partial => 'general_evaluation', :collection => @person.general_evaluations %>
+  </ul>
+  <%= link_to_if can?(:create,GeneralEvaluation,:evaluated=>@person), t('.new_evaluation'), new_person_general_evaluation_path(:person_id => @person.id) %>
+</div>

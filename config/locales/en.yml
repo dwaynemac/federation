@@ -30,11 +30,17 @@ en:
     form:
       active_hint: "¿Is this teacher actively teaching?"
       uniyoga_hint: "¿Is he filiated to Uni-Yôga?"
-    show:
+    observations:
       observations: "Observations"
       new_observation: "add observation"
+    general_evaluations:
+      general_evaluations: "General concept evaluations"
+      new_evaluation: "add evaluation"
     index:
       title: "People"
+    show:
+      director_of: "Director at"
+      member_of: "Team member at"
   toggle_filter: "show/hide filter"
   destroy: "remove"
   confirm: "Sure?"
@@ -48,3 +54,8 @@ en:
   observations:
     edit:
       title: "Edit observation"
+  back: "back"
+  general_evaluations:
+    new:
+      back_to: "back to %{name}"
+  detail: "detail"

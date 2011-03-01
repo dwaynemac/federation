@@ -1,0 +1,11 @@
+<ul>
+    <%- [:task_on_school, :sector, :general_performance_grade,
+         :team_work_grade, :trust_grade, :fulfills_monitory,
+         :fulfills_supervision, :participation_with_egregora_grade,
+        :sanctions, :congratulations, :observations].each do |k| -%>
+        <li>
+          <b><%= GeneralEvaluation.human_attribute_name(k) %></b><br>
+          <%= @general_evaluation.send(k) %>
+        </li>
+    <%- end -%>
+</ul>

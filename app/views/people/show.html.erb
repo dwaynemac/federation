@@ -1,11 +1,17 @@
-<h1><%= @person.full_name %></h1>
+<h1><%= @person.full_name %>(<%= @person.level %>)</h1>
 
-<div id="observations">
-  <h2><%= t('.observations') %></h2>
+<%- unless @person.directed_schools.empty? -%>
+    <h2><%= t('.director_of') %>: <%= @person.directed_schools.map{|s|s.name}.join(', ') %></h2>
+<%- end -%>
+<h3><%= t('.member_of') %>: <%= @person.school.try(:name) %></h3>
 
-  <ul>
-    <%= render :partial => 'observation', :collection => @person.observations %>
-  </ul>
-
-  <%= link_to_if can?(:create,Observation,:observed=>@person), t('.new_observation'), new_person_observation_path(:person_id => @person.id) %>
+<div id="person_data">
+  <%= render :partial => 'person_data' %>
 </div>
+
+<p>
+  <%= link_to_if can?(:update, @person), t('edit'), edit_person_path(@person) %>
+</p>
+
+<%= render :partial => 'observations' %>
+<%= render :partial => 'general_evaluations' %>

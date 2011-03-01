@@ -1,0 +1,22 @@
+<p>
+  <%= link_to "<< #{t('.back_to', :name => @person.first_name)}", @person %>
+</p>
+<%= semantic_form_for [@person, @general_evaluation] do |f| %>
+    <%- f.inputs do -%>
+        <%= f.input :evaluated_on %>
+        <%= f.input :task_on_school  %>
+        <%= f.input :sector %>
+        <%= f.input :general_performance_grade, :hint => "1 - 10" %>
+        <%= f.input :team_work_grade, :hint => GeneralEvaluation::GRADES.join(', ') %>
+        <%= f.input :trust_grade, :hint => GeneralEvaluation::GRADES.join(', ') %>
+        <%= f.input :fulfills_monitory %>
+        <%= f.input :fulfills_supervision %>
+        <%= f.input :participation_with_egregora_grade, :hint => GeneralEvaluation::GRADES.join(', ') %>
+        <%= f.input :sanctions%>
+        <%= f.input :congratulations%>
+        <%= f.input :observations%>
+    <%- end -%>
+    <%= f.buttons do %>
+        <%= f.commit_button %>
+    <%- end -%>
+<%- end -%>

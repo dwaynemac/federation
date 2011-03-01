@@ -5,6 +5,9 @@ class Person < ActiveRecord::Base
   # current school he works on
   belongs_to :school
 
+  # current_school he direct
+  has_many :directed_schools, :class_name => "School", :foreign_key => "director_id"
+
   # current monitor
   belongs_to :monitor, :class_name => "Person", :counter_cache => :monitored_counter
 
@@ -19,6 +22,9 @@ class Person < ActiveRecord::Base
 
   # observations made to this person
   has_many :observations, :foreign_key => "observed_id", :dependent => :destroy
+
+  # concept evaluations of this person
+  has_many :general_evaluations, :foreign_key => "evaluated_id", :dependent => :destroy
 
   LEVELS = %w(asistente docente maestro)
   validates_inclusion_of :level, :in => LEVELS

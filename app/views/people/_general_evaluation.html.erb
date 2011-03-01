@@ -1,0 +1,4 @@
+<h3><%= l general_evaluation.evaluated_on %> - <%= general_evaluation.evaluator.username %></h3>
+<%= link_to t('detail'), [@person, general_evaluation] %> -
+<%= link_to_if can?(:update, general_evaluation), t('edit'), edit_person_general_evaluation_path(:id => general_evaluation.id, :person_id => @person.id) %> -
+<%= link_to_if can?(:destroy, general_evaluation), t('destroy'), [@person, general_evaluation], :method => :delete, :confirm => t('confirm') %>

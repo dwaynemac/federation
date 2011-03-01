@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110301171247) do
+ActiveRecord::Schema.define(:version => 20110301181711) do
 
   create_table "federations", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,26 @@ ActiveRecord::Schema.define(:version => 20110301171247) do
 
   create_table "filiation_categories", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "general_evaluations", :force => true do |t|
+    t.integer  "federation_id"
+    t.integer  "evaluator_id"
+    t.integer  "evaluated_id"
+    t.date     "evaluated_on"
+    t.string   "task_on_school"
+    t.string   "sector"
+    t.integer  "general_performance_grade"
+    t.string   "team_work_grade"
+    t.string   "trust_grade"
+    t.boolean  "fulfills_monitory"
+    t.boolean  "fulfills_supervision"
+    t.integer  "participation_with_egregora_grade"
+    t.text     "sanctions"
+    t.text     "congratulations"
+    t.text     "observations"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -50,6 +70,8 @@ ActiveRecord::Schema.define(:version => 20110301171247) do
     t.boolean  "active"
     t.boolean  "uniyoga"
     t.integer  "monitored_counter"
+    t.string   "website"
+    t.string   "blogs"
   end
 
   create_table "schools", :force => true do |t|

@@ -8,6 +8,7 @@ Fed::Application.routes.draw do
   end
   resources :people do
     resources :observations
+    resources :general_evaluations
   end
 
   root :to => "main#index"

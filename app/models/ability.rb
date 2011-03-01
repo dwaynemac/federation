@@ -25,13 +25,12 @@ class Ability
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
-
-
     # scope to federation
     [School,Person].each do |k|
       can :manage, k, :federation_id => user.federation_id
     end
     can :manage, Observation, :observed => { :federation_id => user.federation_id }
+    can :manage, GeneralEvaluation, :evaluated => { :federation_id => user.federation_id }
     can [:read,:update], User, :id => user.id
 
   end

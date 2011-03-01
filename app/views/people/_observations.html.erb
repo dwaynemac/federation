@@ -1,0 +1,7 @@
+<div id="observations">
+  <h2><%= t('.observations') %></h2>
+  <ul>
+    <%= render :partial => 'observation', :collection => @person.observations %>
+  </ul>
+  <%= link_to_if can?(:create,Observation,:observed=>@person), t('.new_observation'), new_person_observation_path(:person_id => @person.id) %>
+</div>

@@ -1,0 +1,10 @@
+<h2></h2>
+
+
+<%- [:monitor, :supervisor].each do |k| -%>
+    <b><%= Person.human_attribute_name(k) %>:</b> <%= @person.send(k).try(:full_name) %><br>
+<%- end -%>
+
+<%- [:phone, :email, :website, :blogs].each do |k| -%>
+  <b><%= Person.human_attribute_name(k) %>:</b><%= @person.send(k) %><br>
+<%- end -%>

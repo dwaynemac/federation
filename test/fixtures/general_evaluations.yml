@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: 
+  evaluated: 
+  evaluated_on: 2011-03-01
+  task_on_school: MyString
+  sector: MyString
+  general_performance_grade: 1
+  team_work_grade: 1
+  trust_grade: 1
+  fulfills_monitory: false
+  fulfills_supervision: false
+  participation_with_egregora_grade: 1
+  sanctions: MyText
+  congratulations: MyText
+  observations: MyText
+
+two:
+  user: 
+  evaluated: 
+  evaluated_on: 2011-03-01
+  task_on_school: MyString
+  sector: MyString
+  general_performance_grade: 1
+  team_work_grade: 1
+  trust_grade: 1
+  fulfills_monitory: false
+  fulfills_supervision: false
+  participation_with_egregora_grade: 1
+  sanctions: MyText
+  congratulations: MyText
+  observations: MyText
