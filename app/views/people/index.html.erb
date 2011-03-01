@@ -14,6 +14,7 @@
     <th><%= t('activerecord.attributes.person.school') %></th>
     <th><%= t('activerecord.attributes.person.monitor') %></th>
     <th><%= t('activerecord.attributes.person.supervisor') %></th>
+    <th><%= t('activerecord.attributes.person.monitored') %></th>
   </tr>
   <%- @people.each do |person| -%>
     <tr>
@@ -26,6 +27,7 @@
       <td><%= person.school.try :name %></td>
       <td><%= person.monitor.try :full_name %></td>
       <td><%= person.supervisor.try :full_name %></td>
+      <td><%= person.monitored.size %></td>
       <td><%= link_to_if can?(:update,person), t('edit'), edit_person_path(person) %></td>
       <td><%= link_to_if can?(:destroy,person), t('destroy'), person_path(person), :confirm => t('confirm'), :method => :delete, :title => t('destroy') %></td>
     </tr>

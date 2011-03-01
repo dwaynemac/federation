@@ -6,7 +6,7 @@ class Person < ActiveRecord::Base
   belongs_to :school
 
   # current monitor
-  belongs_to :monitor, :class_name => "Person"
+  belongs_to :monitor, :class_name => "Person", :counter_cache => :monitored_counter
 
   # current supervisor
   belongs_to :supervisor, :class_name => "Person", :conditions => { :level => 'maestro' }

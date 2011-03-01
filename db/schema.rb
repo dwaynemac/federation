@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110125234334) do
+ActiveRecord::Schema.define(:version => 20110301171247) do
 
   create_table "federations", :force => true do |t|
     t.string   "name"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20110125234334) do
     t.datetime "updated_at"
     t.boolean  "active"
     t.boolean  "uniyoga"
+    t.integer  "monitored_counter"
   end
 
   create_table "schools", :force => true do |t|
@@ -70,16 +71,14 @@ ActiveRecord::Schema.define(:version => 20110125234334) do
 
   create_table "users", :force => true do |t|
     t.string   "username"
-    t.string   "reset_password_token"
-    t.string   "remember_token"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",        :default => 0
+    t.integer  "sign_in_count",      :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "allowed",            :default => false
     t.integer  "federation_id"
   end
 

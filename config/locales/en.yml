@@ -21,6 +21,7 @@ en:
         federation: "current federation"
         active: "Actively teaching"
         uniyoga: "Filiated to Uni-Yôga"
+        monitored: "current monitored"
   schools:
     index:
       title: "Schools"
