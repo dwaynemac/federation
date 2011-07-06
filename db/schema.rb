@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110301181711) do
+ActiveRecord::Schema.define(:version => 20110706233752) do
 
   create_table "federations", :force => true do |t|
     t.string   "name"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20110301181711) do
     t.integer  "filiation_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "kshema_school_id"
   end
 
   create_table "unames", :force => true do |t|
@@ -102,6 +103,8 @@ ActiveRecord::Schema.define(:version => 20110301181711) do
     t.datetime "updated_at"
     t.boolean  "allowed",            :default => false
     t.integer  "federation_id"
+    t.string   "role"
+    t.string   "locale"
   end
 
   add_index "users", ["username"], :name => "index_users_on_username", :unique => true

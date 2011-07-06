@@ -2,7 +2,9 @@ source 'http://rubygems.org'
 source "http://gems.github.com"
 
 gem 'rails', '3.0.4'
+
 gem 'sqlite3'
+gem 'typhoeus'
 
 gem 'formtastic', '1.2.3'
 gem 'meta_search'
