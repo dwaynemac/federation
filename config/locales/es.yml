@@ -28,6 +28,9 @@ es:
     index:
       title: "Escuelas"
       new_school: "Nueva escuela"
+      students: "Alumnos"
+      swasthya: "SwáSthya"
+      iniciantes: "Iniciantes"
   people:
     form:
       active_hint: "¿Esta enseñando activamente?"

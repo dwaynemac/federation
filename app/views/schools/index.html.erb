@@ -1,5 +1,27 @@
 <h1><%= t('.title') %></h1>
 <%= render :partial => 'filter' %>
+
+<div id="totals">
+  <div class="total">
+    <ul>
+      <li class="data"><%= @totals[:students] %></li>
+      <li class="label"><%= t('.students') %></li>
+    </ul>
+  </div>
+  <div class="total">
+    <ul>
+      <li class="data"><%= @totals[:swasthya] %></li>
+      <li class="label"><%= t('.swasthya') %></li>
+    </ul>
+  </div>
+  <div class="total">
+    <ul>
+      <li class="data"><%= @totals[:iniciantes] %></li>
+      <li class="label"><%= t('.iniciantes') %></li>
+    </ul>
+  </div>
+</div>
+
 <table border="1">
   <tr>
     <% [:name, :director, :filiation_category, :team_members].each do |k| %>

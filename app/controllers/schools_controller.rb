@@ -6,11 +6,18 @@ class SchoolsController < ApplicationController
 
     # for form
     @filiation_categories= FiliationCategory.all.map { |fc| [fc.name, fc.id] }
-
     @search= @scope.search(params[:search])
 
     respond_to do |format|
-      format.html { @schools = @search.all }
+      format.html do
+        @schools = @search.all
+        @totals = {:students => 0, :iniciantes => 0, :swasthya => 0}
+        @schools.each do |s|
+          @totals[:swasthya]   += s.swasthya_count unless s.swasthya_count.nil?
+          @totals[:iniciantes] += s.iniciantes_count unless s.iniciantes_count.nil?
+          @totals[:students]   += s.students_count unless s.students_count.nil?
+        end
+      end
     end
   end
 
