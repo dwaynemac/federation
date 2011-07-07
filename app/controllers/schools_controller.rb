@@ -11,11 +11,11 @@ class SchoolsController < ApplicationController
     respond_to do |format|
       format.html do
         @schools = @search.all
-        @totals = {:students => 0, :iniciantes => 0, :swasthya => 0}
+        @totals = {:students => 0, :iniciantes => 0, :swasthya => 0, :sadhakas => 0, :yogins => 0, :chelas => 0}
         @schools.each do |s|
-          @totals[:swasthya]   += s.swasthya_count unless s.swasthya_count.nil?
-          @totals[:iniciantes] += s.iniciantes_count unless s.iniciantes_count.nil?
-          @totals[:students]   += s.students_count unless s.students_count.nil?
+          [:students, :iniciantes, :swasthya, :sadhakas, :yogins, :chelas].each do |key|
+            @totals[key] += s.send("#{key}_count") unless s.send("#{key}_count").nil?
+          end
         end
       end
     end

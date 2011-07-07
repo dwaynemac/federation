@@ -19,7 +19,7 @@ class School < ActiveRecord::Base
     return k_school
   end
 
-  %W(students swasthya iniciantes).each do |attr|
+  %W(students swasthya iniciantes sadhakas yogins chelas).each do |attr|
     define_method "#{attr}_count" do
       ks = self.find_k_school
       unless ks.nil?

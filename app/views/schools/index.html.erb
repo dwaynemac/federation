@@ -4,13 +4,24 @@
 <div id="totals">
   <div class="total">
     <ul>
-      <li class="data"><%= @totals[:students] %></li>
+      <li class="data">
+        <%= @totals[:students] %>
+      </li>
       <li class="label"><%= t('.students') %></li>
     </ul>
   </div>
   <div class="total">
     <ul>
-      <li class="data"><%= @totals[:swasthya] %></li>
+      <li class="data">
+        <div style="float:left;"><%= @totals[:swasthya] %></div>
+        <div style="float:left; padding-top:0.1em;">
+          <ul style="font-size:0.25em;list-style:none;">
+            <li style="color:yellow"><%= @totals[:sadhakas] %> sádhakas</li>
+            <li style="color:orange"><%= @totals[:yogins] %> yôgins</li>
+            <li style="color:red"><%= @totals[:chelas] %> chelas</li>
+          </ul>
+        </div>
+      </li>
       <li class="label"><%= t('.swasthya') %></li>
     </ul>
   </div>
