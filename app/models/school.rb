@@ -23,7 +23,7 @@ class School < ActiveRecord::Base
     define_method "#{attr}_count" do
       ks = self.find_k_school
       unless ks.nil?
-        ret = ks[attr]
+        ret = Rails.cache.fetch("school_#{self.id}_#{attr}_count", :expires_in => 5.hours){ ks[attr] }
       end
       return ret
     end
