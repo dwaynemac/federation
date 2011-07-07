@@ -41,6 +41,9 @@
     <th>Nro de alumnos actual</th>
     <th>En SwáSthya</th>
     <th>En Iniciantes</th>
+    <th>Sádhakas</th>
+    <th>Yôgins</th>
+    <th>Chêlas</th>
   </tr>
   <%- @schools.each do |s| -%>
     <tr>
@@ -51,6 +54,9 @@
       <td><%= s.students_count %></td>
       <td><%= s.swasthya_count %></td>
       <td><%= s.iniciantes_count %></td>
+      <td><%= s.sadhakas_count %></td>
+      <td><%= s.yogins_count %></td>
+      <td><%= s.chelas_count %></td>
       <td><%= link_to_if can?(:update,s), t('edit'), edit_school_path(s) %></td>
       <td><%= link_to_if can?(:destroy,s), t('destroy'), school_path(s), :method => :delete, :confirm => t('confirm')%></td>
     </tr>
