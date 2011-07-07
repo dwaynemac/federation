@@ -1,4 +1,8 @@
 /* MINE */
+#totals {
+    width: 1124px;
+}
+
 #totals > .total {
     float: left;
     color: #FFCA00;
