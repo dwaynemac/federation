@@ -21,7 +21,7 @@ class School < ActiveRecord::Base
 
   %W(students swasthya iniciantes sadhakas yogins chelas).each do |attr|
     define_method "#{attr}_count" do
-      ks = Rais.cache.fetch("school_#{self_id}_kshema", :expires_in => 10.hours) do
+      ks = Rails.cache.fetch("school_#{self.id}_kshema", :expires_in => 10.hours) do
           ks = self.find_k_school
       end
       unless ks.nil?
