@@ -6,7 +6,7 @@ class SchoolsController < ApplicationController
 
     # for form
     @filiation_categories= FiliationCategory.all.map { |fc| [fc.name, fc.id] }
-    @search= @scope.search(params[:search])
+    @search= @scope.search(params[:search]||{:filiation_category_id_in => [2,3]})
 
     respond_to do |format|
       format.html do
