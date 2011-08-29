@@ -1,10 +1,49 @@
 <h1><%= t('.title') %></h1>
 <%= render :partial => 'filter' %>
+
+<div id="totals">
+  <div class="total">
+    <ul>
+      <li class="data">
+        <%= @totals[:students] %>
+      </li>
+      <li class="label"><%= t('.students') %></li>
+    </ul>
+  </div>
+  <div class="total">
+    <ul>
+      <li class="data">
+        <div style="float:left;"><%= @totals[:swasthya] %></div>
+        <div style="float:left; padding-top:0.1em;">
+          <ul style="font-size:0.25em;list-style:none;">
+            <li style="color:yellow"><%= @totals[:sadhakas] %> sádhakas</li>
+            <li style="color:orange"><%= @totals[:yogins] %> yôgins</li>
+            <li style="color:red"><%= @totals[:chelas] %> chêlas</li>
+          </ul>
+        </div>
+      </li>
+      <li class="label"><%= t('.swasthya') %></li>
+    </ul>
+  </div>
+  <div class="total">
+    <ul>
+      <li class="data"><%= @totals[:iniciantes] %></li>
+      <li class="label"><%= t('.iniciantes') %></li>
+    </ul>
+  </div>
+</div>
+
 <table border="1">
   <tr>
     <% [:name, :director, :filiation_category, :team_members].each do |k| %>
       <th><%= School.human_attribute_name(k) %></th>
     <%- end -%>
+    <th>Nro de alumnos actual</th>
+    <th>En SwáSthya</th>
+    <th>En Iniciantes</th>
+    <th>Sádhakas</th>
+    <th>Yôgins</th>
+    <th>Chêlas</th>
   </tr>
   <%- @schools.each do |s| -%>
     <tr>
@@ -12,6 +51,12 @@
       <td><%= s.director.try(:full_name) %></td>
       <td><%= s.filiation_category.try(:name) %></td>
       <td><%= s.team_members.count %></td>
+      <td><%= s.students_count %></td>
+      <td><%= s.swasthya_count %></td>
+      <td><%= s.iniciantes_count %></td>
+      <td><%= s.sadhakas_count %></td>
+      <td><%= s.yogins_count %></td>
+      <td><%= s.chelas_count %></td>
       <td><%= link_to_if can?(:update,s), t('edit'), edit_school_path(s) %></td>
       <td><%= link_to_if can?(:destroy,s), t('destroy'), school_path(s), :method => :delete, :confirm => t('confirm')%></td>
     </tr>

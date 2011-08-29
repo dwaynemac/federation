@@ -1,0 +1,67 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  page_title: "Federaciones"
+  layouts:
+    application:
+      people: "Personas"
+      schools: "Escuelas"
+  activerecord:
+    attributes:
+      person:
+        full_name: "Nombre completo"
+        phone: "teléfono"
+        email: "email"
+        level: "grado"
+        school: "Escuela actual"
+        monitor: "Monitor actual"
+        supervisor: "Supervisor actual"
+        federation: "Federación actual"
+        active: "Activo"
+        uniyoga: "Filiado a la Uni-Yôga"
+        monitored: "Monitoreados"
+    meta_search:
+      predicates:
+        contains: "%{attribute} contiene"
+  schools:
+    index:
+      title: "Escuelas"
+      new_school: "Nueva escuela"
+      students: "Alumnos"
+      swasthya: "SwáSthya"
+      iniciantes: "Iniciantes"
+  people:
+    form:
+      active_hint: "¿Esta enseñando activamente?"
+      uniyoga_hint: "¿Esta afiliado a la Uni-Yôga?"
+    observations:
+      observations: "Observaciones"
+      new_observation: "agregar observacion"
+    general_evaluations:
+      general_evaluations: "Evaluación conceptual"
+      new_evaluation: "agregar evaluación"
+    index:
+      title: "Personas"
+    show:
+      director_of: "Director en"
+      member_of: "Equipo en"
+  toggle_filter: "ver/ocultar filtro"
+  destroy: "eliminar"
+  confirm: "Seguro?"
+  main:
+    public:
+      login_cas: "ingresar a DeRose Connect"
+      public_message: "Esta página es pública. <br>   ¿precisa acceso? contacte al administrador."
+  filter: "filtrar"
+  edit: "editar"
+  sign_out: "salir"
+  observations:
+    edit:
+      title: "Editar observación"
+  back: "volver"
+  new_person: "Registrar nueva persona"
+  general_evaluations:
+    new:
+      back_to: "volver a %{name}"
+  detail: "detalle"

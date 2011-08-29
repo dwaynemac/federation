@@ -1,0 +1,22 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  activerecord:
+    attributes:
+      general_evaluation:
+        federation: "Federación"
+        evaluator: "Evaluador"
+        evaluated: "Evaluado"
+        evaluated_on: "Evaluado el"
+        task_on_school: "Tarea que desempeña en la Unidad:"
+        sector: "Gerencias que integra."
+        general_performance_grade: "Calificar en la actualidad con nota de 1 a 10 el grado de desempeño en general dentro de la Unidad."
+        team_work_grade: "Calificar en a actualidad el grado de satisfacción que el instructor posee por trabajar en su equipo:"
+        trust_grade: "Calificar en la actualidad el grado de confianza que le brinda:."
+        fulfills_monitory: "Cumple con la monitoría."
+        fulfills_supervision: "Cumple con los compromisos con el supervisor."
+        participation_with_egregora_grade: "Su nivel de participación en actividades gregarias:"
+        sanctions: "Si fue sancionado, explicar lo ocurrido brevemente:"
+        congratulations: "Si fue felicitado, explique los motivos:"
+        observations: "Citar brevemente algo ocurrido en los últimos doce meses que debería ser asentado en el legajo, ya sea positivo, negativo o que considere de importancia:"
