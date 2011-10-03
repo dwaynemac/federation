@@ -1,6 +1,7 @@
 <a id="show_filter"><%= t('toggle_filter') %></a>
 <div id="filter">
-<%= semantic_form_for @search do |f| %>
+<%- scope = params[:federation_id]? [@federation,@search] : @search -%>
+<%= semantic_form_for scope do |f| %>
     <%= f.inputs do %>
         <%= f.input :name_like %>
         <%= f.input :filiation_category_id_in, :as => :select, :collection => @filiation_categories, :multiple => true %>
