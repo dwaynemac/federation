@@ -13,12 +13,13 @@
 </div>
 
 <div id="session">
-  <%= current_user.username %> | <%= current_user.federation.name %> | <%= link_to t('sign_out'), destroy_user_session_path %>
+  <%= current_user.username %> | <%= current_user.federation.name if current_user.federation %> | <%= link_to t('sign_out'), destroy_user_session_path %>
 </div>
 
 <div id="nav-bar">
-  <%= link_to t('.people'), people_url %> |
-  <%= link_to t('.schools'), schools_url %>
+  <%= link_to t('.federations'), federations_url if can?(:read, Federation) %> |
+  <%= link_to t('.people'), people_url if can?(:read, Person) %> |
+  <%= link_to t('.schools'), schools_url if can?(:read, School)%>
 </div>
 
 <%= yield %>

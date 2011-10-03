@@ -1,4 +1,4 @@
-<h1><%= t('.title') %></h1>
+<h1><%= t('.title') %> <%= "@ #{@federation.name}"if params[:federation_id] %></h1>
 <%= render :partial => 'filter' %>
 
 <div id="totals">
@@ -33,36 +33,47 @@
   </div>
 </div>
 
-<table border="1">
-  <tr>
-    <% [:name, :director, :filiation_category, :team_members].each do |k| %>
-      <th><%= School.human_attribute_name(k) %></th>
-    <%- end -%>
-    <th>Nro de alumnos actual</th>
-    <th>En SwáSthya</th>
-    <th>En Iniciantes</th>
-    <th>Sádhakas</th>
-    <th>Yôgins</th>
-    <th>Chêlas</th>
-  </tr>
-  <%- @schools.each do |s| -%>
+<div>
+  <table border="1">
     <tr>
-      <td><%= s.name %></td>
-      <td><%= s.director.try(:full_name) %></td>
-      <td><%= s.filiation_category.try(:name) %></td>
-      <td><%= s.team_members.count %></td>
-      <td><%= s.students_count %></td>
-      <td><%= s.swasthya_count %></td>
-      <td><%= s.iniciantes_count %></td>
-      <td><%= s.sadhakas_count %></td>
-      <td><%= s.yogins_count %></td>
-      <td><%= s.chelas_count %></td>
-      <td><%= link_to_if can?(:update,s), t('edit'), edit_school_path(s) %></td>
-      <td><%= link_to_if can?(:destroy,s), t('destroy'), school_path(s), :method => :delete, :confirm => t('confirm')%></td>
+      <%- if can?(:cross_federation, School) -%>
+          <th>Federation</th>
+      <%- end -%>
+      <% [:name, :director, :filiation_category, :team_members].each do |k| %>
+          <th><%= School.human_attribute_name(k) %></th>
+      <%- end -%>
+      <th>Nro de alumnos actual</th>
+      <th>En SwáSthya</th>
+      <th>En Iniciantes</th>
+      <th>Sádhakas</th>
+      <th>Yôgins</th>
+      <th>Chêlas</th>
     </tr>
-  <%- end -%>
-</table>
+    <%- @schools.each do |s| -%>
+        <tr>
+          <%- if can?(:cross_federation, School) -%>
+              <td><%= s.federation.name %></td>
+          <%- end -%>
+          <td><%= s.name %></td>
+          <td><%= s.director.try(:full_name) %></td>
+          <td><%= s.filiation_category.try(:name) %></td>
+          <td><%= s.team_members.count %></td>
+          <td><%= s.students_count %></td>
+          <td><%= s.swasthya_count %></td>
+          <td><%= s.iniciantes_count %></td>
+          <td><%= s.sadhakas_count %></td>
+          <td><%= s.yogins_count %></td>
+          <td><%= s.chelas_count %></td>
+          <td><%= link_to_if can?(:update,s), t('edit'), edit_school_path(s) %></td>
+          <td><%= link_to_if can?(:destroy,s), t('destroy'), school_path(s), :method => :delete, :confirm => t('confirm')%></td>
+        </tr>
+    <%- end -%>
+  </table>
+</div>
 
-<p>
-  <%= link_to t('.new_school'), new_school_path if can? :create, School %>
-</p>
+<%- if can? :create, School -%>
+    <p>
+      <%- url = params[:federation_id]? new_federation_school_path(:federation_id => params[:federation_id]) : new_school_path -%>
+      <%= link_to t('.new_school'), url  %>
+    </p>
+<%- end -%>

@@ -3,6 +3,10 @@ Fed::Application.routes.draw do
   devise_for :users
   match "logout", :to => "devise_session#destroy"
 
+  resources :federations do
+    resources :schools
+  end
+
   resources :schools do
     resources :people
   end
@@ -10,6 +14,8 @@ Fed::Application.routes.draw do
     resources :observations
     resources :general_evaluations
   end
+
+
 
   root :to => "main#index"
 

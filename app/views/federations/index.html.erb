@@ -1,0 +1,8 @@
+<ul>
+  <%- @federations.each do |fed| -%>
+    <li><%= link_to fed.name, federation_schools_path(:federation_id => fed.id) %></li>
+  <%- end -%>
+</ul>
+<div>
+  <%= link_to( t('.new'), new_federation_path) if can?(:manage, Federation) %>
+</div>

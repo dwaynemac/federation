@@ -3,7 +3,7 @@
 Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
-  config.mailer_sender = "soporte@kshema.com.ar"
+  config.mailer_sender = "padma@metododerose.org"
 
   # Configure the class responsible to send e-mails.
   config.mailer = "Devise::Mailer"

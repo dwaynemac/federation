@@ -6,6 +6,7 @@ en:
   page_title: "Federations"
   layouts:
     application:
+      federations: "Federations"
       people: "People"
       schools: "Schools"
   activerecord:
@@ -29,6 +30,9 @@ en:
       students: "Students"
       swasthya: "SwáSthya"
       iniciantes: "Begginners"
+  federations:
+    index:
+      new: "New federation"
   people:
     form:
       active_hint: "¿Is this teacher actively teaching?"

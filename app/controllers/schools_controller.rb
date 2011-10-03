@@ -55,11 +55,17 @@ class SchoolsController < ApplicationController
     end
   end
 
+  def destroy
+    @scope.find(params[:id]).destroy
+    redirect_to root_url
+  end
+
   private
 
   def set_scope
     if params[:federation_id]
-      @scope = Federation.find(params[:federation_id]).schools
+      @federation = Federation.find(params[:federation_id])
+      @scope = @federation.schools
     else
       @scope = School.accessible_by(current_ability)
     end

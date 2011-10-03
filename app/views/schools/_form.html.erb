@@ -1,7 +1,11 @@
-<%= semantic_form_for @school do |f| %>
+<%- scope = params[:federation_id]? [@federation,@school] : @school -%>
+<%= semantic_form_for scope do |f| %>
     <%= f.inputs :name, :filiation_category, :director %>
     <%- f.inputs do -%>
         <%= f.input :kshema_school_id, :label => "Kshema ID" %>
+    <%- end -%>
+    <%- if can?(:cross_federation, School) -%>
+        <%= f.inputs :federation %>
     <%- end -%>
     <%= f.buttons do %>
         <%= f.commit_button %>
