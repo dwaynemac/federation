@@ -4,5 +4,5 @@
   <%- end -%>
 </ul>
 <div>
-  <%= link_to( t('.new'), new_federation_path) if can?(:manage, Federation) %>
+  <%= link_to( t('.new'), new_federation_path) if can?(:create, Federation) %>
 </div>

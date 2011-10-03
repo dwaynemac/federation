@@ -30,11 +30,11 @@ class Ability
       can :manage, klass, :federation_id => user.federation_id
     end
 
-    can :manage, Federation, :id => user.federation_id
+    can [:read,:update], Federation, :id => user.federation_id
+    cannot [:create,:destroy], Federation
     can :manage, Observation, :observed => { :federation_id => user.federation_id }
     can :manage, GeneralEvaluation, :evaluated => { :federation_id => user.federation_id }
     can [:read,:update], User, :id => user.id
-
 
     if user.auditor?
       can :read, School
