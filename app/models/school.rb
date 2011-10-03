@@ -6,6 +6,7 @@ class School < ActiveRecord::Base
   belongs_to :filiation_category
 
   validates_presence_of :name
+  validates_uniqueness_of :kshema_school_id
 
   belongs_to :director, :class_name => "Person"
   has_many :team_members, :class_name => "Person"

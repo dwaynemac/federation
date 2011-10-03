@@ -39,7 +39,9 @@ class Ability
     if user.auditor?
       can :read, School
       cannot :read, Person
-      can [:read,:list], Federation
+      cannot :manage, Observation
+      cannot :manage, GeneralEvaluation
+      can :read, Federation
     end
 
     if user.admin?
