@@ -5,13 +5,15 @@ class MainController < ApplicationController
 
   def index
     respond_to do |format|
-      format.html
+      format.html { redirect_to schools_url }
     end
   end
 
   def public
     respond_to do |format|
-      format.html { render :layout => 'public' }
+      format.html do
+        render :layout => 'public'
+      end
     end
   end
 
