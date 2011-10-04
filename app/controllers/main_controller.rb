@@ -12,7 +12,11 @@ class MainController < ApplicationController
   def public
     respond_to do |format|
       format.html do
-        render :layout => 'public'
+        if signed_in
+          redirect_to root_path
+        else
+          render :layout => 'public'
+        end
       end
     end
   end

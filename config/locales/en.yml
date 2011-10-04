@@ -53,8 +53,9 @@ en:
   confirm: "Sure?"
   main:
     public:
-      login_cas: "sign in on DeRose Connect"
-      public_message: "this is public. <br>   ¿need access? contact the administrator."
+      public_message: "¿need access? contact the administrator."
+      login_cas: "sign in on DeRose Connect."
+      try_again: "Click here to access."
   filter: "filter"
   edit: "edit"
   sign_out: "sign out"

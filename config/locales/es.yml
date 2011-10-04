@@ -52,7 +52,8 @@ es:
   main:
     public:
       login_cas: "ingresar a DeRose Connect"
-      public_message: "Esta página es pública. <br>   ¿precisa acceso? contacte al administrador."
+      public_message: "¿precisa acceso? contacte al administrador."
+      try_again: "ingrese al sistema"
   filter: "filtrar"
   edit: "editar"
   sign_out: "salir"
