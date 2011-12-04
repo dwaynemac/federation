@@ -20,7 +20,7 @@ class School < ActiveRecord::Base
     return k_school
   end
 
-  %W(students swasthya iniciantes sadhakas yogins chelas).each do |attr|
+  %W(students swasthya iniciantes sadhakas yogins chelas in_formation).each do |attr|
     define_method "#{attr}_count" do
       ks = Rails.cache.fetch("school_#{self.id}_kshema", :expires_in => 10.hours) do
           ks = self.find_k_school

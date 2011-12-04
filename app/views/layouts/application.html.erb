@@ -8,9 +8,10 @@
 </head>
 <body>
 
-<div id="flash_messages">
-  <%= render :partial => "layouts/flash_messages" %>
-</div>
+    <div id="flash_messages">
+      <%= render :partial => "layouts/flash_messages" %>
+      </div>
+<%- if user_signed_in? -%>
 
 <div id="session">
   <%= current_user.username %> |
@@ -21,10 +22,11 @@
 </div>
 
 <div id="nav-bar">
-  <%= link_to t('.federations'), federations_url if can?(:read, Federation) %> |
-  <%= link_to t('.people'), people_url if can?(:read, Person) %> |
-  <%= link_to t('.schools'), schools_url if can?(:read, School)%>
+    <%= link_to t('.federations'), federations_url if can?(:read, Federation) %> |
+    <%= link_to t('.people'), people_url if can?(:read, Person) %> |
+    <%= link_to t('.schools'), schools_url if can?(:read, School)%>
 </div>
+<%- end -%>
 
 <%= yield %>
 

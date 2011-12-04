@@ -4,7 +4,7 @@ source "http://gems.github.com"
 gem 'rails', '3.0.4'
 
 gem 'sqlite3'
-gem 'typhoeus'
+gem 'typhoeus', '0.2.4'
 
 gem 'formtastic', '1.2.3'
 gem 'meta_search'
@@ -22,7 +22,7 @@ gem 'jquery-rails', '>= 0.2.6'
 
 group :test, :development do
   gem 'yard'
-  gem "faker", '0.9.4'
+  gem "faker", '1.0.1'
   gem "machinist", '1.0.6'
   gem "thoughtbot-shoulda", "2.11.1", :require => "shoulda"
   gem "mocha", '0.9.10'
