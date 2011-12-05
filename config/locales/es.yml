@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
@@ -31,6 +32,7 @@ es:
       students: "Alumnos"
       swasthya: "SwáSthya"
       iniciantes: "Iniciantes"
+      in_formation: "en formación"
   people:
     form:
       active_hint: "¿Esta enseñando activamente?"
